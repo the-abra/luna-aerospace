@@ -12,7 +12,7 @@ prompt() {
 
 # Function to setup NGINX reverse proxy
 setup_nginx_proxy() {
-    SERVER_NAME=$(prompt "Enter the server name (e.g., example.com)" "example.com")
+    SERVER_NAME=$(prompt "Enter the server name (e.g., example.com)" "luna-aerospace.com")
     PROXY_PASS=$(prompt "Enter the proxy pass URL (e.g., http://localhost:3000)" "http://localhost:3000")
     CONFIG_PATH=$(prompt "Enter the NGINX config file path" "/etc/nginx/sites-available/$SERVER_NAME")
 
@@ -20,7 +20,7 @@ setup_nginx_proxy() {
     cat <<EOL > $CONFIG_PATH
 server {
     listen 80;
-    server_name $SERVER_NAME;
+    server_name $SERVER_NAME www.$SERVER_NAME;
 
     location / {
         proxy_pass $PROXY_PASS;

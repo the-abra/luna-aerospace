@@ -43,7 +43,7 @@ header {
 }
 
 .logo {
-  width: 64px;
+  width: 128px;
 }
 
 .nav-item {
@@ -166,7 +166,7 @@ header {
 }
 
 .light:after {
-  content: "Explore";
+  content: "Keşfet";
   position: absolute;
   display: flex;
   justify-content: center;
