@@ -7,8 +7,8 @@ def index():
     return render_template('index.html')
 
 @app.route('/load')
-def load():
+def index():
     return render_template('load.html')
 
 if __name__ == '__main__':
-    app.run(port=3000, debug=True, host="127.0.0.1")
+    app.run(port=80, host='0.0.0.0')

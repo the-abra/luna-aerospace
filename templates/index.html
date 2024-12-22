@@ -1,15 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Sample Project</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>Project Hosting Tool</title>
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+   <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, Flask!</h1>
-        <p>This is a sample Flask project. VPath: /opt/server | Main Path: /opt/PHT/core/modules/flask-server</p>
-    </div>
+<!-- partial:index.partial.html -->
+<body>
+  <div id="docslayer" style="display: none;">
+    <iframe id="layeriframe" src="nothing" frameborder="0"></iframe>
+  </div>
+    <header>
+      <a href="#"
+        ><img
+          src="{{ url_for('static', filename='assests/pht.png') }}"
+          alt="logo"
+          class="logo"
+      /></a>
+
+      <input type="checkbox" id="check" />
+      <label for="check" class="icons">
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <i class="bx bx-x" id="close-icon"></i>
+      </label>
+
+      <nav class="navbar">
+        <a class="nav-item" style="--i: 0">Architecture</a>
+        <a class="nav-item" style="--i: 1">Module Development</a>
+        <a class="nav-item" style="--i: 2">Installation</a>
+        <a class="nav-item" style="--i: 3">Github</a>
+      </nav>
+    </header>
+
+    <section class="content">
+      <h1>Think & Build</h1>
+      <a href="#" class="btn light"></a>
+    </section>
+    
+  </body>
+<!-- partial -->
+<script src="{{ url_for('static', filename='index.js') }}"></script>
 </body>
 </html>
