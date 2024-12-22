@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Project Hosting Tool</title>
-   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+   <link href="{{ url_for('static', filename='3rd/boxicons.min.css') }}" rel="stylesheet" />
    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 </head>
-<body>
 <!-- partial:index.partial.html -->
 <body>
+  <video class="video-background" autoplay muted loop>
+    <source src="{{ url_for('static', filename='assests/main-background.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <div id="docslayer" style="display: none;">
     <iframe id="layeriframe" src="nothing" frameborder="0"></iframe>
   </div>
@@ -35,12 +38,11 @@
     </header>
 
     <section class="content">
-      <h1>Think & Build</h1>
+      <h1>Build Future</h1>
       <a href="#" class="btn light"></a>
     </section>
     
   </body>
 <!-- partial -->
 <script src="{{ url_for('static', filename='index.js') }}"></script>
-</body>
 </html>
