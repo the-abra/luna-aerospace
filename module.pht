@@ -1,4 +1,4 @@
 os=debian
-giturl=https://github.com/phthub/flask-server
+giturl=https://github.com/the-abra/luna-aerospace
 exec=main.sh
 vpath=/opt/server
