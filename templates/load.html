@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Luna AEROSPACE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='load.css') }}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="thing" style="display: none;">
+  <div class="ring ring--1"></div>
+  <div class="ring ring--2"></div>
+  <div class="ring ring--3"></div>
+</div>
+<div class="content" style="display: none;">
+    <iframe src="/fetch/{{ fetchpage }}" frameborder="0"></iframe>
+</div>
+<!-- partial -->
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
