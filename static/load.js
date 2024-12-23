@@ -6,6 +6,5 @@ const iframe = document.getElementById('iframe');
     document.getElementById('thing').style.display = 'none';
     
     // Show the content and the iframe
-    document.getElementById('content').style.display = 'block';
     iframe.style.display = 'block';
   };
