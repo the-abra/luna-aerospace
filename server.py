@@ -29,7 +29,10 @@ def fetch(page_name):
 
 @app.route('/fonts/<path:filename>')
 def serve_font(filename):
-    return send_from_directory(FONT_DIR, filename, mimetype='font/woff')
+    try:
+        return send_from_directory(FONT_DIR, filename, mimetype='font/woff')
+    except Exception:
+        return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.run(port=3000, debug=True)
