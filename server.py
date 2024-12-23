@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 FONT_DIR = os.path.join(app.root_path, 'static', 'fonts')
-
+MEDIA_DIR = os.path.join(app.root_path, 'static', 'assests')
 @app.route('/')
 def root():
     try:
@@ -31,6 +31,13 @@ def fetch(page_name):
 def serve_font(filename):
     try:
         return send_from_directory(FONT_DIR, filename, mimetype='font/woff')
+    except Exception:
+        return render_template('404.html'), 404
+
+@app.route('/media/<path:filename>')
+def serve_media(filename):
+    try:
+        return send_from_directory(MEDIA_DIR, filename, mimetype='font/woff')
     except Exception:
         return render_template('404.html'), 404
 
