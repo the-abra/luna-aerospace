@@ -15,4 +15,4 @@ def fetch(page_name):
     return render_template(f'{page_name}.html')
 
 if __name__ == '__main__':
-    app.run(port=3000, host='0.0.0.0')
+    app.run(port=3000)
