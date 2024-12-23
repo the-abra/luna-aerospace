@@ -6,7 +6,11 @@
   }
   
   body {
-    background-color: #121418;
+    background: #191919;
+	background-image:
+		linear-gradient(90deg, #111 1rem, transparent 1rem),
+		linear-gradient(#111 1rem, transparent 1rem);
+	background-size: 1.2rem 1.2rem;
     display: grid;
     place-items: center;
     min-height: 100vh;
@@ -16,7 +20,7 @@
   }
   
   .thing {
-    width: 30vw;
+    width: 5vw;
     aspect-ratio: 1/1;
     position: relative;
     perspective: 2000px;
@@ -34,7 +38,7 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    border: 1vw solid #fff;
+    border: 0.3vw solid #fff;
     border-radius: 50%;
     border-bottom-color: transparent;
     border-left-width: 0px;
