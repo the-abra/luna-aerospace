@@ -29,11 +29,11 @@ sublog() {
 source config.conf
 
 # Setup
-if [[ -d ./setup ]]; then
+if ! [[ -f .setup-done ]]; then
     for i in setup/*; do
         source "$i"
     done
-    rm -r setup/
+    touch .setup-done
 fi
 service nginx start
 python3 server.py
