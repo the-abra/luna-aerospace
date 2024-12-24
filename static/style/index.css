@@ -243,13 +243,13 @@ body {
 
 
 /* SEGMENT SECOND */
-.segmentsecond {
+.ourvision, .sponsors, .gallery {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   z-index: 0;
+  min-height: 50vh;
   font-size: x-large;
   background-color: transparent;
 }
