@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="tr" >
 <head>
   <meta charset="UTF-8">
-  <title>Luna Aerospace</title>
    <link href="{{ url_for('static', filename='3rd/boxicons.min.css') }}" rel="stylesheet" />
    <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
 </head>
@@ -10,12 +9,12 @@
 <body>
   <video class="video-background" autoplay muted loop>
     <source src="{{ url_for('static', filename='assests/main-background.mp4') }}" type="video/mp4">
-    Your browser does not support the video tag.
+    Tarayıcınız mp4 formatını desteklemiyor.
   </video>
 
     <section class="content">
       <h1>ALBATROS</h1>
-      <a href="albatros" class="btn light"></a>
+      <a href="/albatros" target="_top" class="btn light"></a>
     </section>
     
   </body>

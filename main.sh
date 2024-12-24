@@ -26,7 +26,7 @@ sublog() {
     echo -e "\t${RESET}${MAGENTA}ㄷ ${WHITE}$1" && sleep 0.2
 }
 
-source config.conf
+source setup/depends.conf
 
 # Setup
 if ! [[ -f .setup-done ]]; then

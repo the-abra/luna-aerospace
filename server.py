@@ -1,9 +1,19 @@
 from flask import Flask, render_template, send_from_directory
-import os
+import os, toml
+
+
 
 app = Flask(__name__)
 FONT_DIR = os.path.join(app.root_path, 'static', 'fonts')
 MEDIA_DIR = os.path.join(app.root_path, 'static', 'assests')
+config_file = "server.conf"
+
+# Load the TOML file
+with open(config_file, 'r') as file:
+    config_data = toml.load(file)
+
+title = config_data["Frontend"]["title"]
+
 @app.route('/')
 def root():
     try:
@@ -14,7 +24,7 @@ def root():
 @app.route('/<string:page_name>')
 def rootplus(page_name):
     if os.path.isfile(f"./templates/{page_name}.html"):
-        return render_template("load.html", fetchpage=page_name), 200
+        return render_template("load.html", fetchpage=page_name, title=title), 200
     else:
         return render_template('404.html'), 404
         
