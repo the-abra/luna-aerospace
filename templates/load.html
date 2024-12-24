@@ -38,10 +38,12 @@
     <a id="contact" href="/contact" class="nav-item" style="--i: 3" title="İletişim Bilgilerimiz">İLETİŞİM</a>
     <a id="about-us" href="/about-us" class="nav-item" style="--i: 4" title="Hakkımızda Daha Fazlası">HAKKIMIZDA</a>
   </nav>
-  
 </header>
 
-<iframe id="iframe" style="display: none;" src="/fetch/{{ fetchpage }}" frameborder="0"></iframe>
+
+
+<iframe id="iframe" style="display: none;" allowtransparency = "true" src="/fetch/{{ fetchpage }}" frameborder="0"></iframe>
+
 <!-- partial -->
 <script src="{{ url_for('static', filename='script/load.js') }}"></script>
 <script>
