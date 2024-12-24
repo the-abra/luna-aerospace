@@ -17,7 +17,7 @@ title = config_data["Frontend"]["title"]
 @app.route('/')
 def root():
     try:
-        return render_template("load.html", fetchpage="index"), 200
+        return render_template("load.html", fetchpage="index", title=title), 200
     except Exception:
         return render_template('404.html'), 404
 
