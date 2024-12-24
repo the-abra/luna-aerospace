@@ -64,8 +64,21 @@ addEventListener("mousemove", (e) => {
 document.getElementById('emailForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the default form submission
 
-  // Get the email value
-  const email = document.getElementById('emailInput').value;
+  const emailInput = document.getElementById('emailInput');
+  const email = emailInput.value.trim();
+
+  // Basic email validation using a regular expression
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!email) {
+      alert('Please enter your email address.');
+      return;
+  }
+
+  if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+  }
 
   // Send the data using fetch
   fetch('/mail-sub', {
@@ -85,6 +98,7 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
       // Handle the response data
       console.log('Success:', data);
       alert('Email sent successfully!');
+      emailInput.value = ''; // Clear the input field after success
   })
   .catch(error => {
       // Handle any errors
