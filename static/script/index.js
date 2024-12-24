@@ -58,3 +58,37 @@ addEventListener("mousemove", (e) => {
     y1 = clientY;
   }
 });
+
+//mail
+
+document.getElementById('emailForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Get the email value
+  const email = document.getElementById('emailInput').value;
+
+  // Send the data using fetch
+  fetch('/mail-sub', {
+      method: 'POST', // Use POST for sending data
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email }) // Convert the data to JSON
+  })
+  .then(response => {
+      if (response.ok) {
+          return response.json();
+      }
+      throw new Error('Network response was not ok.');
+  })
+  .then(data => {
+      // Handle the response data
+      console.log('Success:', data);
+      alert('Email sent successfully!');
+  })
+  .catch(error => {
+      // Handle any errors
+      console.error('Error:', error);
+      alert('There was an error sending the email.');
+  });
+});
