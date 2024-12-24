@@ -17,7 +17,7 @@
 </div>
 
 <header>
-  <a href="#"
+  <a href="/"
     ><img
       src="{{ url_for('static', filename='assests/icon.png') }}"
       alt="logo"
@@ -31,12 +31,12 @@
   </label>
 
   <nav class="navbar" aria-label="Main Navigation">
-    <a href="/albatros" class="nav-item" style="--i: 0" title="İHA Aracımız">ALBATROS</a>
-    <a href="/argos" class="nav-item" style="--i: 1" title="İHA Kameramız">ARGOS</a>
-    <a href="/hudplus" class="nav-item" style="--i: 1" title="İHA Kontrol Sistemi">HUD+</a>
-    <a href="/team" class="nav-item" style="--i: 2" title="Ekip Üyelerimiz">EKİBİMİZ</a>
-    <a href="/contact" class="nav-item" style="--i: 3" title="İletişim Bilgilerimiz">İLETİŞİM</a>
-    <a href="/about-us" class="nav-item" style="--i: 4" title="Hakkımızda Daha Fazlası">HAKKIMIZDA</a>
+    <a id="albatros" href="/albatros" class="nav-item" style="--i: 0" title="İHA Aracımız">ALBATROS</a>
+    <a id="argos" href="/argos" class="nav-item" style="--i: 1" title="İHA Kameramız">ARGOS</a>
+    <a id="hudplus" href="/hudplus" class="nav-item" style="--i: 1" title="İHA Kontrol Sistemi">HUD+</a>
+    <a id="team" href="/team" class="nav-item" style="--i: 2" title="Ekip Üyelerimiz">EKİBİMİZ</a>
+    <a id="contact" href="/contact" class="nav-item" style="--i: 3" title="İletişim Bilgilerimiz">İLETİŞİM</a>
+    <a id="about-us" href="/about-us" class="nav-item" style="--i: 4" title="Hakkımızda Daha Fazlası">HAKKIMIZDA</a>
   </nav>
   
 </header>
@@ -44,5 +44,8 @@
 <iframe id="iframe" style="display: none;" src="/fetch/{{ fetchpage }}" frameborder="0"></iframe>
 <!-- partial -->
 <script src="{{ url_for('static', filename='script/load.js') }}"></script>
+<script>
+  document.getElementById('{{ fetchpage }}').style.color = "green";
+</script>
 </body>
 </html>
